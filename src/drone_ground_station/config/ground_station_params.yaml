@@ -1,0 +1,72 @@
+# Ground Station Configuration Parameters
+
+# Drone connection settings
+drone_connection:
+  ip: "192.168.4.1"
+  video_port: 5600
+  telemetry_port: 14550
+  command_port: 14551
+  connection_timeout: 5.0
+
+# Video streaming settings
+video_streaming:
+  frame_rate: 30
+  video_width: 1280
+  video_height: 720
+  codec: "h264"
+  bitrate: 2000000  # 2 Mbps
+  buffer_size: 2
+  gstreamer_pipeline: |
+    udpsrc port={video_port} caps="application/x-rtp,payload=96" !
+    rtph264depay ! h264parse ! avdec_h264 !
+    videoconvert ! video/x-raw,format=BGR !
+    appsink name=sink emit-signals=true sync=false max-buffers=2 drop=true
+
+# Telemetry settings
+telemetry:
+  update_rate: 10.0  # Hz
+  timeout: 2.0  # seconds
+  protocol: "mavlink"  # or "json"
+  
+# Flight control settings
+flight_control:
+  max_velocity:
+    linear_x: 5.0  # m/s
+    linear_y: 5.0  # m/s
+    linear_z: 3.0  # m/s
+    angular_z: 1.0  # rad/s
+  
+  default_takeoff_altitude: 2.0  # meters
+  emergency_descent_rate: 2.0  # m/s
+  
+# GUI settings
+gui:
+  window_width: 1200
+  window_height: 800
+  video_display_width: 640
+  video_display_height: 480
+  update_rate: 10.0  # Hz
+  
+# Logging settings
+logging:
+  level: "INFO"  # DEBUG, INFO, WARN, ERROR
+  log_to_file: true
+  log_directory: "logs"
+  max_log_size: 10485760  # 10 MB
+  
+# Safety settings
+safety:
+  enable_geofence: true
+  max_altitude: 120.0  # meters
+  max_distance: 500.0  # meters from home
+  low_battery_threshold: 20.0  # percentage
+  critical_battery_threshold: 10.0  # percentage
+  auto_land_on_low_battery: true
+  
+# Recording settings
+recording:
+  enable_video_recording: false
+  enable_telemetry_logging: true
+  video_format: "mp4"
+  video_quality: "high"
+  storage_directory: "recordings"

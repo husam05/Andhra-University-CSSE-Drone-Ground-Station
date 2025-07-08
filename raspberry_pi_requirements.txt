@@ -1,0 +1,219 @@
+# Raspberry Pi 3 Python Requirements
+# Optimized for ARM architecture and limited resources
+
+# Core Python packages
+setuptools>=65.0.0
+wheel>=0.37.0
+pip>=22.0.0
+
+# Serial communication for Crossflight
+pyserial>=3.5
+
+# Network and communication
+requests>=2.28.0
+urllib3>=1.26.0
+
+# JSON and configuration
+PyYAML>=6.0
+
+# System monitoring
+psutil>=5.9.0
+
+# GPIO and hardware control (Raspberry Pi specific)
+RPi.GPIO>=0.7.1
+gpiozero>=1.6.2
+
+# Camera support
+picamera>=1.13
+# Note: picamera2 is the newer library but may require additional setup
+# picamera2>=0.3.0
+
+# Video processing (lightweight versions)
+numpy>=1.21.0,<1.25.0  # Avoid newer versions that may have ARM issues
+opencv-python>=4.5.0,<4.8.0  # Stable version for Pi
+
+# GStreamer Python bindings
+PyGObject>=3.42.0
+
+# Async programming
+aiofiles>=0.8.0
+aiohttp>=3.8.0
+
+# Logging and monitoring
+coloredlogs>=15.0
+
+# Time and scheduling
+APScheduler>=3.9.0
+
+# Mathematical operations
+scipy>=1.9.0,<1.11.0  # Avoid versions with compilation issues on ARM
+
+# Data structures
+collections-extended>=2.0.0
+
+# Error handling and retry logic
+retrying>=1.3.3
+tenacity>=8.0.0
+
+# Network utilities
+netifaces>=0.11.0
+ping3>=4.0.0
+
+# Configuration management
+configparser>=5.3.0
+toml>=0.10.0
+
+# Process management
+supervisor>=4.2.0  # For managing multiple services
+
+# Lightweight web server (for status/debugging)
+Flask>=2.2.0
+Flask-CORS>=3.0.0
+
+# MSP (MultiWii Serial Protocol) for Crossflight
+# Note: You may need to install this manually or use a custom implementation
+# pymsp>=1.0.0  # Custom MSP library if available
+
+# System utilities
+shutil>=3.0.0  # Built-in, but listed for completeness
+os-sys>=2.1.4
+
+# Lightweight alternatives for resource-constrained environment
+# Use these instead of heavier alternatives
+ujson>=5.4.0  # Faster JSON parsing
+orjson>=3.8.0  # Alternative fast JSON library
+
+# Memory optimization
+memory-profiler>=0.60.0
+
+# Hardware monitoring
+w1thermsensor>=2.0.0  # Temperature sensors
+adafruit-circuitpython-dht>=3.7.0  # DHT sensors (if used)
+
+# Lightweight database (for logging)
+sqlite3  # Built-in Python module
+
+# Compression (for log files)
+gzip  # Built-in Python module
+
+# Date and time utilities
+python-dateutil>=2.8.0
+pytz>=2022.1
+
+# Signal processing (for telemetry)
+signal  # Built-in Python module
+
+# Threading and multiprocessing
+threading  # Built-in Python module
+multiprocessing  # Built-in Python module
+concurrent.futures  # Built-in Python module
+
+# Error tracking
+traceback  # Built-in Python module
+
+# File operations
+glob  # Built-in Python module
+shutil  # Built-in Python module
+
+# Regular expressions
+re  # Built-in Python module
+
+# Base64 encoding (for data transmission)
+base64  # Built-in Python module
+
+# Hash functions
+hashlib  # Built-in Python module
+
+# Random number generation
+random  # Built-in Python module
+
+# Math operations
+math  # Built-in Python module
+
+# Collections
+collections  # Built-in Python module
+
+# Itertools
+itertools  # Built-in Python module
+
+# Functools
+functools  # Built-in Python module
+
+# Operator
+operator  # Built-in Python module
+
+# Copy
+copy  # Built-in Python module
+
+# Pickle (for object serialization)
+pickle  # Built-in Python module
+
+# Struct (for binary data)
+struct  # Built-in Python module
+
+# Array
+array  # Built-in Python module
+
+# Bytes operations
+bytes  # Built-in Python type
+bytearray  # Built-in Python type
+
+# String operations
+string  # Built-in Python module
+
+# IO operations
+io  # Built-in Python module
+
+# Warnings
+warnings  # Built-in Python module
+
+# Weak references
+weakref  # Built-in Python module
+
+# Context management
+contextlib  # Built-in Python module
+
+# Decimal arithmetic
+decimal  # Built-in Python module
+
+# Fractions
+fractions  # Built-in Python module
+
+# Statistics
+statistics  # Built-in Python module
+
+# Pathlib
+pathlib  # Built-in Python module
+
+# Subprocess
+subprocess  # Built-in Python module
+
+# Socket programming
+socket  # Built-in Python module
+
+# Select
+select  # Built-in Python module
+
+# Errno
+errno  # Built-in Python module
+
+# Fcntl (Unix file control)
+fcntl  # Built-in Python module (Unix only)
+
+# Termios (Unix terminal control)
+termios  # Built-in Python module (Unix only)
+
+# TTY
+tty  # Built-in Python module (Unix only)
+
+# PWD (Unix password database)
+pwd  # Built-in Python module (Unix only)
+
+# GRP (Unix group database)
+grp  # Built-in Python module (Unix only)
+
+# Resource (Unix resource usage)
+resource  # Built-in Python module (Unix only)
+
+# Syslog (Unix system logging)
+syslog  # Built-in Python module (Unix only)

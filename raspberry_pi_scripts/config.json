@@ -1,0 +1,44 @@
+{
+  "ground_station_ip": "192.168.4.19",
+  "video_port": 5600,
+  "telemetry_port": 14550,
+  "command_port": 14551,
+  
+  "camera_settings": {
+    "camera_width": 1280,
+    "camera_height": 720,
+    "framerate": 30,
+    "bitrate": 2000000,
+    "camera_device": "/dev/video0",
+    "flip_method": 0,
+    "exposure_mode": "auto"
+  },
+  
+  "serial_settings": {
+    "serial_port": "/dev/ttyAMA0",
+    "serial_baudrate": 115200,
+    "timeout": 1.0
+  },
+  
+  "telemetry_settings": {
+    "telemetry_rate": 10,
+    "protocol": "msp",
+    "enable_logging": true,
+    "log_file": "/var/log/drone_telemetry.log"
+  },
+  
+  "network_settings": {
+    "wifi_ssid": "DroneNetwork",
+    "wifi_password": "drone123",
+    "ap_mode": true,
+    "ip_address": "192.168.4.1",
+    "netmask": "255.255.255.0"
+  },
+  
+  "safety_settings": {
+    "enable_watchdog": true,
+    "max_connection_loss_time": 10,
+    "auto_land_on_connection_loss": true,
+    "emergency_mode": "land"
+  }
+}
